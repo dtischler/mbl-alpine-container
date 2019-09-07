@@ -20,7 +20,7 @@ config.json can be modified to run any of the python scripts that you prefer upo
 
 to:
 
-"python3",
+"python3",<br>
 "air.py"
 
 
@@ -40,7 +40,7 @@ In any case, we need to come up with a way to store the values, and ship them to
  
  Now on the node:
  
- runc help (because the commands are different than Docker)
- runc list (to see if the container is running)
+ runc help (because the commands are different than Docker)<br>
+ runc list (to see if the container is running)<br>
  runc exec alpine-python sh (to poke around in the container)
  
