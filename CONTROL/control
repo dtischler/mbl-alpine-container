@@ -1,0 +1,7 @@
+Package: alpine-python-iot
+Version: 1.0
+Architecture: any
+Maintainer: miniNodes team <info@mininodes.com>
+Section: base
+Priority: optional
+Description: This package is an Alpine Python container.

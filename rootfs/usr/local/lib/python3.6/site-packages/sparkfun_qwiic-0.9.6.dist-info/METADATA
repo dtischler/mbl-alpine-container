@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: sparkfun-qwiic
+Version: 0.9.6
+Summary: SparkFun Electronics qwiic library
+Home-page: http://www.sparkfun.com/qwiic
+Author: SparkFun Electronics
+Author-email: info@sparkfun.com
+License: MIT
+Keywords: electronics,maker
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: sparkfun-qwiic-i2c
+Requires-Dist: sparkfun-qwiic-bme280
+Requires-Dist: sparkfun-qwiic-keypad
+Requires-Dist: sparkfun-qwiic-proximity
+Requires-Dist: sparkfun-qwiic-scmd
+Requires-Dist: sparkfun-qwiic-twist
+Requires-Dist: sparkfun-qwiic-ccs811
+Requires-Dist: sparkfun-qwiic-joystick
+Requires-Dist: sparkfun-qwiic-micro-oled
+
+Qwiic Package
+==========================
+
+This package provides an overall python support for the qwiic system.
+

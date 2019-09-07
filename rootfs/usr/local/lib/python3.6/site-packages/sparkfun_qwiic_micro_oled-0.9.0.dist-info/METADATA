@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: sparkfun-qwiic-micro-oled
+Version: 0.9.0
+Summary: SparkFun Electronics qwiic Micro OLED package
+Home-page: http://www.sparkfun.com/qwiic
+Author: SparkFun Electronics
+Author-email: info@sparkfun.com
+License: MIT
+Keywords: electronics,maker
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: sparkfun-qwiic-i2c
+
+Qwiic Micro OLED
+==========================
+
+This package provdes support for the SparkFun qwiic Micro OLED board.
+

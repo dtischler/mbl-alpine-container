@@ -1,0 +1,17 @@
+.python-rundeps=20190820.225806
+alpine-baselayout
+alpine-keys
+apk-tools
+autoconf
+automake
+busybox
+ca-certificates
+gcc
+git
+i2c-tools
+libc-utils
+linux-headers
+make
+mosquitto
+musl-dev
+nano
