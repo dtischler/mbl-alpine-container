@@ -1,15 +1,30 @@
 # mbl-alpine-container
 
-TODO:  The python fles in the rootfs folder are not complete.  Only air.py and gps.py work, but lightning.py does not.
+Alpine and Python container with I2C pass-through, thus allowing the sensors to be accessed from within the container.  Air Quality Sensor is working, GPS sensor is working, but Lightning Sensor is not.
 
 
-gps.py returns back the NMEA coordinates, though they still need to be parsed and converted to Lat/Long.
-air.py is a loop that returns the current Temp, Pressure, TVOC, and CO2.
+TODO:  The python fles in the rootfs folder are proof of concept, and read data, but do not do anything with it.  
+Only air.py and gps.py work, but lightning.py does not.
+
+
+gps.py returns back the NMEA coordinates, though they still need to be parsed and converted to Lat/Long.  There seem to be some utilities for that.
+
+air.py is a loop that returns the current Temp, Pressure, TVOC, and CO2 every 20 seconds.
+
 lightning.py gives an error.
 
 
-config.json can be modified to run any of the python scripts that you prefer.
+config.json can be modified to run any of the python scripts that you prefer upon launching the container, by changling line 10 from:
 
+"sh"
+
+to:
+
+"python3",
+"air.py"
+
+
+(It needs to be on two lines like that example)
 
 In any case, we need to come up with a way to store the values, and ship them to the Ampere box.  Let's bypass the Edge nodes for now.
 
@@ -25,4 +40,7 @@ In any case, we need to come up with a way to store the values, and ship them to
  
  Now on the node:
  
- runc list
+ runc help (because the commands are different than Docker)
+ runc list (to see if the container is running)
+ runc exec alpine-python sh (to poke around in the container)
+ 
