@@ -26,15 +26,20 @@ to:
 
 (It needs to be on two lines like that example)
 
-In any case, we need to come up with a way to store the values, and ship them to the Ampere box.  Let's bypass the Edge nodes for now.
+In any case, we need to come up with a way to store the values, and ship them to the Ampere box.  Let's bypass the Edge nodes for now.  Included in this repo are the output artifacts, already created and made by opkg (the .ipk file is the output).  If you are going to make changes and run a build, make sure you rm the .ipk and the .ipk.tar files from your local directory, or you will end up bundling them into the next version, effectively doubling the size of the package!
 
  After cloning, run:
  
  opkg-build -Z "xz" -g root -o root . .
+
  tar -cvf alpine-python-iot.ipk.tar alpine-python-iot_1.0_any.ipk
+
  cp alpine-python-iot.ipk.tar ../update-resources/alpine-python-iot.ipk.tar
+
  cd ../update-resources/
+
  mbl-cli -a 192.168.0.xxx put alpine-python-iot.ipk.tar /scratch
+
  mbl-cli -a 192.168.0.xxx shell
  
  
