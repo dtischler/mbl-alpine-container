@@ -1,5 +1,5 @@
 Package: alpine-python-iot
-Version: 1.0
+Version: 1.1
 Architecture: any
 Maintainer: miniNodes team <info@mininodes.com>
 Section: base
