@@ -1,0 +1,3 @@
+smbus
+sparkfun-qwiic
+influxdb
