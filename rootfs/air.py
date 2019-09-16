@@ -36,7 +36,7 @@ password = "______ENTER_MQTT_PASSWORD____"
 clientid = "___ENTER_CAYENNE_CLIENTE_ID___"
 mqttc=mqtt.Client(client_id = clientid)
 mqttc.username_pw_set(username, password = password)
-# mqttc.connect("mqtt.mydevices.com", port=1883, keepalive=60)
+mqttc.connect("mqtt.mydevices.com", port=1883, keepalive=60)
 mqttc.loop_start()
 
 #Qwiic Board define

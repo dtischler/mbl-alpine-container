@@ -47,3 +47,4 @@ ping:x:999:
 nogroup:x:65533:
 nobody:x:65534:
 mosquitto:x:101:mosquitto
+influxdb:x:102:influxdb

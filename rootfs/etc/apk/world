@@ -6,12 +6,11 @@ autoconf
 automake
 busybox
 ca-certificates
-gcc
 git
 i2c-tools
+influxdb
 libc-utils
 linux-headers
-make
 mosquitto
 musl-dev
 nano
