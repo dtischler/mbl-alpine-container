@@ -14,7 +14,7 @@ air.py is a loop that returns the current Temp, Pressure, TVOC, and CO2 every 20
 lightning.py gives an error.
 
 
-config.json can be modified to run any of the python scripts that you prefer upon launching the container, by changling line 10 from:
+config.json can be modified to run any of the python scripts that you prefer upon launching the container, by changing line 10 from:
 
 "sh"
 
