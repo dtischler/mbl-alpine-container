@@ -5,6 +5,9 @@ import gps
 from influxdb import InfluxDBClient
 from datetime import datetime
 
+# Wait for influxd to start up.
+time.sleep(10)
+
 client = InfluxDBClient(host='localhost', port=8086)
 client.create_database('iot-weather')
 
