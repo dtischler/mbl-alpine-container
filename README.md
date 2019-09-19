@@ -2,33 +2,11 @@
 
 Alpine and Python container with I2C pass-through, thus allowing the sensors to be accessed from within the container.  Air Quality Sensor is working, GPS sensor is working, but Lightning Sensor is not.
 
+A small script called "start.sh" in the root directory launches 'influxd' as a background process, then the index.py python application in the scripts directory.
 
-TODO:  The python fles in the rootfs folder are proof of concept, and read data, but do not do anything with it.  
-Only air.py and gps.py work, but lightning.py does not.
+We need to come up with a way to store the values, and ship them to the Ampere box.  Let's bypass the Edge nodes for now.  If you sync this repo, once it has downloaded, you need to move the "scripts" directory into the "rootfs" folder, and, check to see if the "start.sh" is executable...if not just chmod +x it.
 
-
-gps.py returns back the NMEA coordinates, though they still need to be parsed and converted to Lat/Long.  There seem to be some utilities for that.
-
-air.py is a loop that returns the current Temp, Pressure, TVOC, and CO2 every 20 seconds.
-
-lightning.py gives an error.
-
-
-config.json can be modified to run any of the python scripts that you prefer upon launching the container, by changing line 10 from:
-
-"sh"
-
-to:
-
-"python3",<br>
-"air.py"
-
-
-(It needs to be on two lines like that example)
-
-In any case, we need to come up with a way to store the values, and ship them to the Ampere box.  Let's bypass the Edge nodes for now.  Included in this repo are the output artifacts, already created and made by opkg (the .ipk file is the output).  If you are going to make changes and run a build, make sure you rm the .ipk and the .ipk.tar files from your local directory, or you will end up bundling them into the next version, effectively doubling the size of the package!
-
- After cloning, run:
+ Then, run:
  
  opkg-build -Z "xz" -g root -o root . .
 
@@ -37,15 +15,15 @@ In any case, we need to come up with a way to store the values, and ship them to
  cp alpine-python-iot.ipk.tar ../update-resources/alpine-python-iot.ipk.tar
 
  cd ../update-resources/
+ 
+ manifest-tool update device --device-id 016cee17a5260000000000010010022f --payload alpine-python-iot.ipk.tar --api-key ak_1MDE2OWY5ZjcxN2NhNWUwMjc0YzIxMDc3MDAwMDAwMDA016a0363d1145e0274c2107700000000Soxtd5TDuAYjzkiOC1HMibvaLq3oNGrz
+ 
+ (change your device id accordingly...it can be found in Pelion web dashboard)
+ 
+ It takes about 15 minutes to push the container, seemingly withought much progress, but it does work in the end.
+ 
+ From an SSH session, you can run:
 
- mbl-cli -a 192.168.0.xxx put alpine-python-iot.ipk.tar /scratch
-
- mbl-cli -a 192.168.0.xxx shell
+ runc exec alpine-python-iot sh  (to start a console inside the running container)
  
- 
- Now on the node:
- 
- runc help (because the commands are different than Docker)<br>
- runc list (to see if the container is running)<br>
- runc exec alpine-python sh (to poke around in the container)
- 
+ influx -database 'iot-weather' -execute 'select * from fahrenheit' -pretty  (or other table as identified in the index.py fie)
