@@ -2,11 +2,11 @@
 
 Alpine and Python container with I2C pass-through, thus allowing the sensors to be accessed from within the container.  Air Quality Sensor is working, GPS sensor is working, but Lightning Sensor is not.
 
-A small script called "start.sh" in the root directory launches 'influxd' as a background process, then the index.py python application in the scripts directory.
+A small script called "start.sh" in the root directory launches 'influxd' as a background process, then the index.py python application in the 'scripts' directory.
 
-We need to come up with a way to store the values, and ship them to the Ampere box.  Let's bypass the Edge nodes for now.  If you sync this repo, once it has downloaded, you need to move the "scripts" directory into the "rootfs" folder, and, check to see if the "start.sh" is executable...if not just chmod +x it.
+The working theory is that the IoT Endpoints collect the data via the sensors, and send MQTT data to the Edge Nodes.  The Edge Nodes then use "mqttwarn" to take the JSON, convert to influx, and publish to the Cloud Server.  If you sync this repo, once it has downloaded, you need to move the "scripts" directory into the "rootfs" folder, and, check to see if the "start.sh" is executable...if not just chmod +x it.
 
- Then, run:
+ Once it is cloned to your Yoga and the 'scripts' directory moved down a level, run:
  
  opkg-build -Z "xz" -g root -o root . .
 
