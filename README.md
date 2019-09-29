@@ -22,7 +22,7 @@ We need to come up with a way to store the values, and ship them to the Ampere b
  
  It takes about 15 minutes to push the container, seemingly without much progress, but it does work in the end.
  
- From an SSH session, you can run:
+ If you then launch an SSH session, you can run:
 
  runc exec alpine-python-iot sh  (to start a console inside the running container)
  
