@@ -3,7 +3,7 @@ import time
 import gps
 import json
 import paho.mqtt.client as mqtt
-from datetime import datetime
+from datetime import datetime70.167.220.144    linaro    ArmIoT2019Edge
 
 import paho.mqtt.client as mqtt
 
@@ -32,7 +32,7 @@ mqttclient.on_message = on_message
 mqttclient.on_publish = on_publish
 mqttclient.username_pw_set("device", password="eDFm3exZ2aPHs4")
 mqttclient.loop_start()
-mqttclient.connect("edge-us-az-1.iot.unfinishedcode.net", 1883, 60)
+mqttclient.connect("edge-us-az-1.iot.unfinishedcode.net", 3883, 60)
 
 CCS811 = qwiic.QwiicCcs811()
 BME280 = qwiic.QwiicBme280() 
