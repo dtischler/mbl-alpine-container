@@ -3,7 +3,7 @@ import time
 import gps
 import json
 import paho.mqtt.client as mqtt
-from datetime import datetime70.167.220.144    linaro    ArmIoT2019Edge
+from datetime import datetime
 
 import paho.mqtt.client as mqtt
 
