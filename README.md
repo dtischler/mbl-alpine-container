@@ -16,11 +16,11 @@ The working theory is that the IoT Endpoints collect the data via the sensors, a
 
  cd ../update-resources/
  
- manifest-tool update device --device-id 016cee17a5260000000000010010022f --payload alpine-python-iot.ipk.tar --api-key ak_1MDE2OWY5ZjcxN2NhNWUwMjc0YzIxMDc3MDAwMDAwMDA016a0363d1145e0274c2107700000000Soxtd5TDuAYjzkiOC1HMibvaLq3oNGrz
+ manifest-tool update device --device-id xxxxxxx --payload alpine-python-iot.ipk.tar --api-key ak_xxxxxxx
  
  (change your device id accordingly...it can be found in Pelion web dashboard)
  
- It takes about 15 minutes to push the container, seemingly without much progress, but it does work in the end.
+ It takes about 15 minutes to push the container.
  
  If you then launch an SSH session, you can run:
 
