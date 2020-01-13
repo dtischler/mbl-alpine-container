@@ -30,9 +30,9 @@ mqttclient.on_log = on_log
 mqttclient.on_connect = on_connect
 mqttclient.on_message = on_message
 mqttclient.on_publish = on_publish
-mqttclient.username_pw_set("device", password="eDFm3exZ2aPHs4")
+mqttclient.username_pw_set("device", password="insert-password-here")
 mqttclient.loop_start()
-mqttclient.connect("edge-us-az-1.iot.unfinishedcode.net", 3883, 60)
+mqttclient.connect("insert-fqdn-of-server-here", 3883, 60)
 
 CCS811 = qwiic.QwiicCcs811()
 BME280 = qwiic.QwiicBme280() 
